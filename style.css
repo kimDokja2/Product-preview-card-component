@@ -1,0 +1,200 @@
+/**********Normalize-start********/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+    line-height: 0;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  address,
+  caption,
+  cite,
+  code,
+  dfn,
+  em,
+  strong,
+  th,
+  var {
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  
+  /* remove all button styles */
+  button {
+    all: unset;
+    cursor: pointer;
+  }
+/********Normalize-end*********/  
+
+:root{
+    /*colors-primary*/
+    --dark-cyan:hsl(158, 36%, 37%);
+    --cream:hsl(30, 38%, 92%);
+    /*colors-neutral*/
+    --very-dark-blue:hsl(212, 21%, 14%);
+    --dark-grayish-blue:hsl(228, 12%, 48%);
+    --white:hsl(0, 0%, 100%,1)
+}
+main{
+    min-height: 100vh;    
+    font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeSpeed;/* para priorizar la velocidad sobre la legibilidad */
+    background-color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+}
+.container{
+    max-width: 35.5rem;
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: var(--white);
+    border-radius: .65rem;
+
+}
+
+.product-photo-mobile img{
+    border-top-left-radius: .65rem;
+    border-top-right-radius: .65rem;
+}
+
+.product-photo img,
+.product-photo{
+    display: none;
+}
+
+.product-info-wrapper {
+  padding: 2em;
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 4% auto auto 10% 12%;
+  row-gap: .7em;
+  align-items: center;
+
+}
+.overline {
+  font-size: .9em;
+  font-weight: 500;
+  opacity: .5;
+  letter-spacing: .4em;
+}
+.title {
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 2.5em;
+}
+.product-info-wrapper p{
+  font-size: 1em;
+  opacity: .5;
+  line-height: 1.5em;
+  
+}
+.product-price {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1ft 1ft;
+  column-gap: 1em;
+  align-items: center;
+}
+.product-price h2{
+  font-size: 2.5em;
+  font-family: "Fraunces";
+  justify-self: end;
+  color:var(--dark-cyan)
+}
+strong{
+  text-decoration: line-through;
+  font-size: 1em;
+  opacity: .7;
+}
+.btn {
+  height: 100%;
+  width: 100%;
+  font-size: 1em;
+  background-color: var(--dark-cyan);
+  justify-self: center;
+  align-self: end;
+  border-radius: .5rem;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (hover: hover){
+  .btn:hover{
+    filter: saturate(2);
+    scale: 1.1 ;
+    
+  }
+  
+
+  .atribution a {
+
+}
+}
+
+
+@media screen and (min-width: 45rem) {
+  .product-photo-mobile img,
+  .product-photo-mobile {
+    display: none;
+  }
+  .product-photo img,
+  .product-photo{
+    display: block;
+    border-radius: .65rem 0 0 .65rem;
+  }
+  .container{
+    width: 45rem;
+    height: 26.63rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+  }
+  .product-info-wrapper{
+    font-size: .9rem;
+  }
+}
